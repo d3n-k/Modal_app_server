@@ -14,7 +14,7 @@ app.use(express.json());
 
 // таблица6
 
-app.post("/create-pdf6", (req, res) => {
+app.post("/api/create-pdf6", (req, res) => {
     console.log(req.body);
   
     const data = req.body;
@@ -36,13 +36,13 @@ app.post("/create-pdf6", (req, res) => {
     
   });
   
-  app.get("/table6", (req, res) => {
+  app.get("/api/table6", (req, res) => {
     res.sendFile(`${__dirname}/table6.pdf`);
   });
 
   //таблица5
 
-  app.post("/create-pdf5", (req, res) => {
+  app.post("/api/create-pdf5", (req, res) => {
     console.log(req.body);
   
     const data = req.body;
@@ -64,13 +64,13 @@ app.post("/create-pdf6", (req, res) => {
     
   });
   
-  app.get("/table5", (req, res) => {
+  app.get("/api/table5", (req, res) => {
     res.sendFile(`${__dirname}/table5.pdf`);
   });
 
   //таблица1
 
-  app.post("/create-pdf1", (req, res) => {
+  app.post("/api/create-pdf1", (req, res) => {
     console.log(req.body);
   
     const data = req.body;
@@ -92,13 +92,13 @@ app.post("/create-pdf6", (req, res) => {
     
   });
   
-  app.get("/table1", (req, res) => {
+  app.get("/api/table1", (req, res) => {
     res.sendFile(`${__dirname}/table1.pdf`);
   });
 
   //таблица2
 
-  app.post("/create-pdf2", (req, res) => {
+  app.post("/api/create-pdf2", (req, res) => {
     console.log(req.body);
   
     const data = req.body;
@@ -120,14 +120,14 @@ app.post("/create-pdf6", (req, res) => {
     
   });
   
-  app.get("/table2", (req, res) => {
+  app.get("/api/table2", (req, res) => {
     res.sendFile(`${__dirname}/table2.pdf`);
   });
 
 
   //таблица3
 
-  app.post("/create-pdf3", (req, res) => {
+  app.post("/api/create-pdf3", (req, res) => {
     console.log(req.body);
   
     const data = req.body;
@@ -149,14 +149,14 @@ app.post("/create-pdf6", (req, res) => {
     
   });
   
-  app.get("/table3", (req, res) => {
+  app.get("/api/table3", (req, res) => {
     res.sendFile(`${__dirname}/table3.pdf`);
   });
 
 
   //таблица4
 
-  app.post("/create-pdf4", (req, res) => {
+  app.post("/api/create-pdf4", (req, res) => {
     console.log(req.body);
   
     const data = req.body;
@@ -178,7 +178,7 @@ app.post("/create-pdf6", (req, res) => {
     
   });
   
-  app.get("/table4", (req, res) => {
+  app.get("/api/table4", (req, res) => {
     res.sendFile(`${__dirname}/table4.pdf`);
   });
 
