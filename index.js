@@ -6,26 +6,15 @@ const bodyParser = require("body-parser");
 const fs = require('fs');
 const carbone = require('carbone');
 const router = require("./routes/index");
-const userController = require("./controllers/userController")
 
 const PORT = process.env.PORT || 5001;
 
 const app = express();
 
 app.use(cors());
-//app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use("/api", router);
-
-
-// app.post("/api/login", async (req, res) => {
-//   console.log("auth");
-//   console.log("authenticate " + JSON.stringify(req.body));
-//   let data = await userController.registration(req, res);
-//   console.log(data);
-//   //res.send(Promise.resolve());
-// });
 
 // таблица6
 
