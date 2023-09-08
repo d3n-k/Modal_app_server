@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const fs = require('fs');
 const carbone = require('carbone');
 const router = require("./routes/index");
+const fileUpload = require('express-fileupload');
 
 const PORT = process.env.PORT || 5001;
 
@@ -14,6 +15,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(fileUpload({}));
 app.use("/api", router);
 
 // таблица6
