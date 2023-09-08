@@ -24,8 +24,11 @@ class FileController {
         try {
             const { filename } = req.params;
             let filePath = path.resolve(__dirname, '..', 'userFiles', filename);
-            console.log("get file path " + filePath);
-            res.sendFile(filePath);
+            if (fs.existsSync(filePath)) {
+                res.sendFile(filePath);
+            } else {
+                res.send({ error: "Файл не найден" });
+            }
         } catch (e) {
             console.log(e);
             res.send({ error: "Файл не найден" });
