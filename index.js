@@ -18,6 +18,62 @@ app.use(express.json());
 app.use(fileUpload({}));
 app.use("/api", router);
 
+// таблица8
+
+app.post("/api/create-pdf8", (req, res) => {
+  console.log(req.body);
+
+  const data = req.body;
+
+  var options = {
+    convertTo: 'pdf'
+  };
+
+  carbone.render('./files/table8.odt', data, options, function (err, result) {
+    if (err) {
+      res.send(Promise.reject());
+      console.log(err);
+
+    }
+    fs.writeFileSync(path.resolve(__dirname, 'table8.pdf'), result);
+    res.send(Promise.resolve());
+
+  });
+
+});
+
+app.get("/api/table8", (req, res) => {
+  res.sendFile(`${__dirname}/table8.pdf`);
+});
+
+// таблица7
+
+app.post("/api/create-pdf7", (req, res) => {
+  console.log(req.body);
+
+  const data = req.body;
+
+  var options = {
+    convertTo: 'pdf'
+  };
+
+  carbone.render('./files/table7.odt', data, options, function (err, result) {
+    if (err) {
+      res.send(Promise.reject());
+      console.log(err);
+
+    }
+    fs.writeFileSync(path.resolve(__dirname, 'table7.pdf'), result);
+    res.send(Promise.resolve());
+
+  });
+
+});
+
+app.get("/api/table7", (req, res) => {
+  res.sendFile(`${__dirname}/table7.pdf`);
+});
+
 // таблица6
 
 app.post("/api/create-pdf6", (req, res) => {
